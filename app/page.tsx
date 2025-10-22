@@ -27,21 +27,18 @@ const ContributionModal = dynamic(
         Add Weekly Record
       </Button>
     ),
-  }
+  },
 )
 
-const HarvestModal = dynamic(
-  () => import("@/components/harvest-modal").then((mod) => mod.HarvestModal),
-  {
-    ssr: false,
-    loading: () => (
-      <Button variant="outline" className="flex items-center gap-2 bg-transparent" disabled>
-        <TrendingUp className="h-4 w-4" />
-        Add Harvest Fee Weekly
-      </Button>
-    ),
-  }
-)
+const HarvestModal = dynamic(() => import("@/components/harvest-modal").then((mod) => mod.HarvestModal), {
+  ssr: false,
+  loading: () => (
+    <Button variant="outline" className="flex items-center gap-2 bg-transparent" disabled>
+      <TrendingUp className="h-4 w-4" />
+      Add Harvest Fee Weekly
+    </Button>
+  ),
+})
 
 const DataManagementModal = dynamic(
   () => import("@/components/data-management-modal").then((mod) => mod.DataManagementModal),
@@ -53,7 +50,7 @@ const DataManagementModal = dynamic(
         Import/Export
       </Button>
     ),
-  }
+  },
 )
 
 export default function HomePage() {
@@ -66,7 +63,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Liquidity Pool Tracker: BTC/USDC</h1>
+              <h1 className="text-3xl font-bold text-foreground">Liquidity Pool Tracker: USDT/USDC</h1>
               <p className="text-muted-foreground mt-1">Track your DeFi pool performance and profitability</p>
             </div>
             {/* 3. O resto do seu componente permanece igual. Os modais funcionarão normalmente. */}
